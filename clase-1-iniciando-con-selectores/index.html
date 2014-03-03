@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Clase 1</title>
+	<style type="text/css">
+	#articulo-1{
+		font-size: 2em;
+	}
+	.articulo{
+		background-color: #efefef;
+		border: 1px solid #ccc;
+		padding: 10px;
+	}
+	div{
+		box-shadow: 2px 2px 4px #000;
+	}
+	</style>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		// Selectores
+		$(document).on('ready', function(){ // document ready (DOMContentLoaded)
+			// ID
+			$('#articulo-1').css("color","red");
+
+			// Clase
+			$('.articulo').css("font-style", "italic");
+
+			// Tag
+			$('p').css('border','1px dashed #000');
+		});
+
+	</script>
+</head>
+<body>
+	<div id="articulo-1" class="articulo">
+		<div class="title">
+		  <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h2>
+		</div>
+		<div class="descripcion">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, mollitia in nam harum eos amet. Optio provident cum ab rerum magnam voluptas quisquam necessitatibus. Exercitationem vel eius blanditiis recusandae obcaecati.</p>
+		</div>
+	</div>
+	<div id="articulo-2" class="articulo">
+		<div class="title">
+		  <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h2>
+		</div>
+		<div class="descripcion">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, mollitia in nam harum eos amet. Optio provident cum ab rerum magnam voluptas quisquam necessitatibus. Exercitationem vel eius blanditiis recusandae obcaecati.</p>
+		</div>
+	</div>
+</body>
+</html>
