@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Clase 2: Consultas al DOM</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css"><!-- Estilos de bootstrap -->
+	<link rel="stylesheet" href="../assets/css/base.css"><!-- Una hoja de estilos nuestra -->
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<section id="contents">
+					<article class="articulo well">
+						<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, mollitia in nam harum eos amet. Optio provident cum ab rerum magnam voluptas quisquam necessitatibus. Exercitationem vel eius blanditiis recusandae obcaecati.
+							<a class="btn" href="#">External link</a>
+						</p>
+						<a class="btn" href="#">Read more</a>
+					</article>
+				</section>
+
+			</div>
+		</div><!-- ends .row -->
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../assets/js/jquery-1.11.0.min.js"><\/script>')</script>
+
+	<script type="text/javascript">
+		var articles = [
+			{
+				title : "Session 1: jQuery for the real world (in spanish)",
+				description: "Today, I would like to share the first session of a new course that I am starting this week, this course includes a lot of the greatest features of jQuery library."
+			},
+			{
+				title : "How to print Attributes enumeration in Java (javax naming directory Attributes)",
+				description: "This interface represents a collection of attributes. In a directory, named objects can have associated with them attributes."
+			},
+			{title : "How to get a multi-valued LDAP attribute in JAVA (using a custom query to LDAP)"},
+			{title : "How to create a List from a JSON object in Java using Jackson Library"},
+			{
+				title : "How to set no-cache headers in a Java EE application’s response (using a Spring controller)",
+				description: "This interface represents a collection of attributes. In a directory, named objects can have associated with them attributes."
+			}
+		];
+
+		$(document).on('ready', function(){ // document ready (DOMContentLoaded)
+			// Creando contenido dinámico (+ appendTo)
+			$.each(articles, function(index, article){
+				var html_title = '<h2>' + article.title + '</h2>',
+					html_description = '<p>' + (typeof article.description !== 'undefined' ? article.description : '') + '</p>';
+
+				$('<article/>',{
+					class: "articulo well",
+					html :
+						$('<div/>',{class:"title", html: html_title }).html()
+						+ $('<div/>',{class:"description", html: html_description}).html()
+						+ '<a class="btn" href="#">Read more</a>'
+				}).appendTo('#contents');
+			});
+
+			// Generación dinámica
+			// typeof + undefined
+			// Array
+			// Object
+
+			// $.each()
+			// appendTo
+			// find()
+			// children()
+			// first()
+			// last()
+			// eq()
+			// addClass()
+			// next() + append()
+			// prev() + prepend()
+
+			var $contents = $('#contents'),
+				$children = $contents.children();
+
+			// Primer elemento + find()
+			$children.first().find('a.btn').addClass('btn-danger');
+
+			// Último elemento + children()
+			$children.last().children('p').addClass('bg-success padding');
+
+			// Element número 3 (índice 2, recuerden eq() es "zero-based")
+			$children.eq(2).children('p').addClass('bg-info padding');
+
+			// Segundo elemento + next() + append()
+			$children.first().next().children('h2')
+				.append('<span class="glyphicon glyphicon-pencil"></span>');
+
+			// Penúltimo elemento + prev() + prepend()
+			$children.last().prev().children('h2')
+				.prepend('<span class="glyphicon glyphicon-pencil"></span>');
+
+			$('.glyphicon').addClass('mini-padding');
+
+			// Recuerda, esta el mejor forma de validar los "undefined"
+			//var x;
+			/*
+			if (typeof x === 'undefined') {
+			   // these statements execute
+			   console.log("Undefined");
+			}
+			else {
+			   // these statements do not execute
+			   console.log("Defined");
+			}*/
+		});
+
+	</script>
+</body>
+</html>
