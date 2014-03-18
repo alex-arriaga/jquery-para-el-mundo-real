@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clase 3: Eventos</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css"><!-- Estilos de bootstrap -->
+	<link rel="stylesheet" href="../assets/css/base.css"><!-- Una hoja de estilos nuestra -->
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+
+				<section class="articles">
+					<h2>Sports</h2>
+					<article class="well">
+						<h3>Shockers Get a Pause to Celebrate Their Run at Perfection</h3>
+						<img src="../assets/img/testing/sports-1.jpg" class="img-responsive" alt="Shockers Get a Pause to Celebrate Their Run at Perfection">
+						<a href="#" class="btn btn-primary show-description" data-visible="false">+</a>
+						<p class="hidden-summary">
+							Wichita State completed an undefeated run through the regular season and the Missouri Valley Conference tournament by beating Indiana State, becoming only the second team to reach 34-0.
+						</p>
+					</article>
+
+					<article class="well">
+						<h3>Nets Shrug Off More Injuries to Rise Above .500 Again</h3>
+						<img src="../assets/img/testing/sports-2.jpg" class="img-responsive" alt="Nets Shrug Off More Injuries to Rise Above .500 Again">
+						<a href="#" class="btn btn-primary show-description"  data-visible="false">+</a>
+						<p class="hidden-summary">The Nets bounced back from a poor performance in Boston with a home win against Sacramento, but Paul Pierce and Andrei Kirilenko were injured.</p>
+					</article>
+				</section>
+			</div>
+
+			<div class="col-md-6">
+				<section class="articles">
+					<h2>World</h2>
+					<article class="well">
+						<h3>Clashes in Ukraine as Rallies Take a Turn</h3>
+						<img src="../assets/img/testing/people-3.jpg" class="img-responsive" alt="Clashes in Ukraine as Rallies Take a Turn">
+						<a href="#" class="btn btn-primary show-description" data-visible="false">+</a>
+						<p class="hidden-summary">In Sevastopol, a pro-Ukraine rally of hundreds was attacked by pro-Russia supporters, who had their own rally there, while Ukraine celebrated the birth of its greatest poet in the Crimean capital.</p>
+					</article>
+
+					<article class="well">
+						<h3>El Salvador’s Presidential Election Close at the Wire</h3>
+						<img src="../assets/img/testing/people-2.jpg" class="img-responsive" alt="El Salvador’s Presidential Election Close at the Wire">
+						<a href="#" class="btn btn-primary show-description" data-visible="false">+</a>
+						<p class="hidden-summary">With roughly half the vote counted, the governing party’s candidate, Salvador Sánchez Cerén, was in a virtual tie with his opponent, Norman Quijano.</p>
+					</article>
+
+				</section>
+			</div>
+		</div><!-- ends .row -->
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../assets/js/jquery-1.11.0.min.js"><\/script>')</script>
+
+	<script type="text/javascript">
+		$(document).on('ready', function(){ // document ready (DOMContentLoaded)
+			/*
+			// Esto código no es óptimo pues realiza tres iteraciones sobre la misma lista de objetos
+			$('article > a.btn').on('click', function(event){
+				event.preventDefault();
+				$(this).next().toggle('slow');
+			});
+
+			$('article > a.btn').on('mouseenter', function(event){
+				$(this).removeClass('btn-primary');
+				$(this).addClass('btn-danger');
+			});
+
+			$('article > a.btn').on('mouseleave', function(event){
+				$(this).removeClass('btn-danger');
+				$(this).addClass('btn-primary');
+			});
+			*/
+
+			$('article > a.btn').each(function(){
+				var $button = $(this);
+
+				$button.on('click', function(event){
+					event.preventDefault();	// Cancela la acción por defecto de las etiquetas <a/>
+					var visible = $button.data('visible');
+
+					if(visible){
+						$button.text('+');
+					}else{
+						$button.text('-');
+					}
+
+					$button.data('visible', !visible); // Cambia el data-attribute
+					$button.next().slideToggle('slow');
+				}) // Podemos encadenar varias instrucciones (chaining)
+				.on('mouseenter', function(event){
+					$button.addClass('btn-danger');
+				})
+				.on('mouseleave', function(event){
+					$button.removeClass('btn-danger');
+				});
+			});
+		});
+	</script>
+</body>
+</html>

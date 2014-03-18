@@ -1,8 +1,39 @@
 /* Estilos base */
-.padding{
-	padding: 1em;
+
+
+h3{
+	margin-top: 0;
+}
+
+a.show-description{
+	border-radius: 0 0 1em;
+    display: block;
+    outline: 0 none;
+    width: 30%;
+}
+
+.articles article{
+	position: relative;
+}
+
+.articles article p{
+	margin-top: 1em;
+}
+
+.articles article .img-responsive{
+	border-radius: 0 1em 1em 0;
+}
+
+
+.hidden-summary{
+	display: none;
 }
 
 .mini-padding{
 	padding: 0.2em;
 }
+
+.padding{
+	padding: 1em;
+}
+
