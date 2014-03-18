@@ -20,7 +20,7 @@ Para más recursos interesantes te invito a visitar mi blog personal: http://www
 	- Métodos para consultas
 	- Recomendaciones sobre validación de undefined
 	- Tips sobre declaración de variables para optimizar consultas
--Clase 3 - Eventos
+-Clase 3. Eventos
 	- Fe de erratas: corrigiendo declaración en JSON (sesión 2)
 	- Creando eventos de forma optimizada
 	- Uso de “chaining”
