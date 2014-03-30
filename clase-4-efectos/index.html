@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Para correcto despliegue en dispositivos móviles -->
+	<title>Clase 4: Efectos</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css"><!-- Estilos de bootstrap -->
+	<link rel="stylesheet" href="../assets/css/base.css"><!-- Una hoja de estilos nuestra -->
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>Cursos para todos!</h1>
+				<a href="#" id="show-courses" class="btn btn-primary">Mostrar/Ocultar</a>
+				<section id="courses" class="courses-list">
+					<h2>Próximos cursos</h2>
+					<article class="course well">
+						<!-- http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-time-element -->
+						<span class="glyphicon glyphicon-calendar"></span>
+						<time class="created-date" datetime="2014-01-27T19:07:51+00:00">January 27, 2014</time>
+						<div class="clearfix"></div>
+						<figure>
+							<img src="../assets/img/testing/drupal-logo.jpg" alt="Drupal uno de los más increíbles CMS" class="img-responsive img-thumbnail">
+						</figure>
+						<h3 class="title">Drupal uno de los más increíbles CMS</h3>
+						<div class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, ex, nesciunt a esse fuga eius commodi dolorum aliquam in reprehenderit corporis eos rerum soluta. Voluptatibus ad quos unde nihil recusandae?</div>
+					</article>
+
+					<article class="course well">
+						<!-- http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-time-element -->
+						<span class="glyphicon glyphicon-calendar"></span>
+						<time class="created-date" datetime="2014-01-27T19:07:51+00:00">January 27, 2014</time>
+						<div class="clearfix"></div>
+						<figure>
+							<img src="../assets/img/testing/joomla-logo.png" alt="Joomla! un CMS en constante evolución" class="img-responsive img-thumbnail">
+						</figure>
+						<h3 class="title">Joomla! un CMS en constante evolución</h3>
+						<div class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, ex, nesciunt a esse fuga eius commodi dolorum aliquam in reprehenderit corporis eos rerum soluta. Voluptatibus ad quos unde nihil recusandae?</div>
+					</article>
+
+					<article class="course well">
+						<!-- http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-time-element -->
+						<span class="glyphicon glyphicon-calendar"></span>
+						<time class="created-date" datetime="2014-01-27T19:07:51+00:00">January 27, 2014</time>
+						<div class="clearfix"></div>
+						<figure>
+							<img src="../assets/img/testing/wordpress-logo.png" alt="Wordpress el grande de los blogs!" class="img-responsive img-thumbnail">
+						</figure>
+						<h3 class="title">Wordpress el grande de los blogs!</h3>
+						<div class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, ex, nesciunt a esse fuga eius commodi dolorum aliquam in reprehenderit corporis eos rerum soluta. Voluptatibus ad quos unde nihil recusandae?</div>
+					</article>
+
+				</section>
+			</div>
+		</div><!-- ends .row -->
+	</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../assets/js/jquery-1.11.0.min.js"><\/script>')</script>
+	<script>
+	// Self invoking anonymous function
+	// Una función anónima que se auto ejecuta
+	(function($){
+		$(document).on('ready', function(){
+
+			// Se recomiendo utilizar esta notación para los eventos, pues es más legigle
+			$('#show-courses').on('click', onClickShowCoursesSlide);
+
+			// Podemos utilizar funciones que realicen el comportamiento que deseamos
+			function onClickShowCoursesSlide(){
+				$('#courses').slideToggle();
+			}
+
+			function onClickShowCoursesFade(){
+				$('#courses').fadeToggle();
+			}
+
+			function onClickShowCourses(){
+				$('#courses').animate(
+					{
+						height: "toggle",
+						width: "100%",
+						fontSize: "1.8em"
+					},
+					800,
+					function(){ console.log("Animación finalizada...")}
+				);// ends animate()
+			}
+		});// ends document.ready()
+	})(jQuery);
+	</script>
+</body>
+</html>

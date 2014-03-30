@@ -26,3 +26,8 @@ Para más recursos interesantes te invito a visitar mi blog personal: http://www
 	- Uso de “chaining”
 	- Data attributes (HTML5)
 	- Más tips sobre responsive web design con Bootstrap 3
+- Clase 4. Funciones anónimas y efectos
+	- ¿Qué es una función anónima?
+	- Self invoking anonymous functions
+	- Usando animate()
+	- Más efectos
