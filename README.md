@@ -5,11 +5,11 @@ Durante este curso veremos cómo utilizar está increíble biblioteca para gener
 
 Si tienes alguna duda por favor visita mi canal de Youtube donde encontrarás estos ejemplos explicados minuciosamente:
 
-Clase 1: https://www.youtube.com/watch?v=cckL87Wl03s
-Clase 2: https://www.youtube.com/watch?v=RIsc_TrAs2A
-Clase 3: https://www.youtube.com/watch?v=TERkD0zq_3U
-Clase 4: https://www.youtube.com/watch?v=e8g6gbJp1Qo
-Clase 5:
+- Clase 1: https://www.youtube.com/watch?v=cckL87Wl03s
+- Clase 2: https://www.youtube.com/watch?v=RIsc_TrAs2A
+- Clase 3: https://www.youtube.com/watch?v=TERkD0zq_3U
+- Clase 4: https://www.youtube.com/watch?v=e8g6gbJp1Qo
+- Clase 5: Próximamente en youtube
 
 Si tienes alguna pregunta puedes dejarla en mi cuenta de twitter: https://twitter.com/alex_arriaga_m
 
