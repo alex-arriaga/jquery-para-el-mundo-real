@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Para correcto despliegue en dispositivos móviles -->
+	<title>Clase 5: Ajax</title>
+	<link rel="stylesheet" href="../assets/css/bootstrap.min.css"><!-- Estilos de bootstrap -->
+	<link rel="stylesheet" href="../assets/css/base.css"><!-- Una hoja de estilos nuestra -->
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1>¡Cursos para todos!</h1>
+				<a href="#" id="load-courses" class="btn btn-primary">Cargar cursos</a>
+				<section id="courses" class="courses-list">
+					<!-- Los cursos serán cargados dinámicamente esta section -->
+				</section>
+			</div>
+		</div><!-- ends .row -->
+	</div>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="../assets/js/jquery-1.11.0.min.js"><\/script>')</script>
+	<script>
+	(function($){
+		$(document).on('ready', function(){
+			$('#load-courses').on('click', onClickLoadCourses);
+
+			function onClickLoadCourses(event){
+				event.preventDefault();
+				var $section_courses = $('#courses').html('<img src="../assets/img/ajax-loader.gif" />');
+
+				var jqxhr = $.ajax({
+					url: '/universidad-del-pastel/courses/getAllCourses	',
+					type: 'GET',
+					dataType: 'json',
+					success: function(courses){
+						$section_courses.html('');
+						$section_courses.hide();
+
+						// Para cada curso, guardarlo en un arreglo temporal
+						var items = [];
+						items.push('<h2>Cursos cargados con Ajax</h2>');
+
+						$.each(courses, function(index, obj){
+							items.push(
+								'<article class="course well">'
+								+ '<span class="glyphicon glyphicon-calendar"></span>'
+								+ '<time class="created-date" datetime="2014-01-27T19:07:51+00:00">'+ obj.Course.created +'</time>'
+								+ '<div class="clearfix"></div>'
+								+ '<figure>'
+								+ '<img src="../assets/img/testing/question.jpg" alt="" class="img-responsive img-thumbnail">'
+								+ '</figure>'
+								+ '<h3 class="title">' + obj.Course.name + '</h3>'
+								+ '<div class="summary">' + obj.Course.description + '</div>'
+								+ '</article>'
+							);
+
+						});
+						// El arreglo temporal asignarlo a la sección de cursos
+						$section_courses.html( items.join('') );
+						$section_courses.slideDown('slow');
+					}
+
+				});
+				jqxhr.done(doneHandler);
+				jqxhr.fail(failureHandler);
+
+				function doneHandler(){
+					console.log("Se ha finalizado...");
+				}
+
+				function failureHandler(){
+					alert("No se han podido cargar cursos");
+				}
+			}
+		});// ends document.ready()
+	})(jQuery);
+	</script>
+</body>
+</html>
