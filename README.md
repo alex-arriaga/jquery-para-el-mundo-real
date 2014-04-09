@@ -9,7 +9,7 @@ Si tienes alguna duda por favor visita mi canal de Youtube donde encontrarás es
 - Clase 2: https://www.youtube.com/watch?v=RIsc_TrAs2A
 - Clase 3: https://www.youtube.com/watch?v=TERkD0zq_3U
 - Clase 4: https://www.youtube.com/watch?v=e8g6gbJp1Qo
-- Clase 5: Próximamente en youtube
+- Clase 5: https://www.youtube.com/watch?v=B613u7Mnipo
 
 Si tienes alguna pregunta puedes dejarla en mi cuenta de twitter: https://twitter.com/alex_arriaga_m
 
@@ -40,5 +40,5 @@ Para más recursos interesantes te invito a visitar mi blog personal: http://www
 - Clase 5. Ajax
 	- ¿Cómo usar Ajax?
 	- Parámentros de la función $.ajax()
-	- Consumiendo datos en formato JSON desde una base de datos real (backend con CakePHP: https://github.com/alex-arriaga/universidad-del-pastel)
+	- Consumiendo datos en formato JSON desde una base de datos real (backend con [CakePHP](https://github.com/alex-arriaga/universidad-del-pastel))
 	- Optimización al concatenar múltiples objetos (push(), join())
