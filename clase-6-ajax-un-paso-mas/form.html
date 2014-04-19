@@ -1,0 +1,42 @@
+<h2>Creando curso</h2>
+<form 
+	id="course-add-form" 
+	class="form" 
+	role="form" 
+	action="/universidad-del-pastel/courses/addByAjax" 
+	method="post" accept-charset="utf-8">
+	<div class="form-group">
+		<label for="course-title">Nombre del curso</label>
+		<input type="text" id="course-title" name="data[Course][name]" class="form-control" placeholder="Ingrese nombre del curso">
+	</div>
+	<div class="form-group">
+		<label for="course-summary">Descripción</label>
+		<textarea id="course-summary" name="data[Course][description]" class="form-control" ></textarea>
+	</div>
+	<div class="form-group">
+		<label for="teacher-id">Profesor</label>
+		<select id="teacher-id" name="data[Course][teacher_id]" class="form-control" style="display:none;">
+			<option value="-1">-- Seleccione --</option>
+		</select>
+	</div>
+	<button id="course-add" type="button" class="btn btn-primary">Crear</button>
+</form>
+
+
+<!-- Modal -->
+<div id="modal-message" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Mensaje</h4>
+      </div>
+      <div id="modal-message-body" class="modal-body">
+      	<!-- El mensaje será insertado dinámicamente aquí -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

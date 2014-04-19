@@ -42,3 +42,11 @@ Para más recursos interesantes te invito a visitar mi blog personal: http://www
 	- Parámentros de la función $.ajax()
 	- Consumiendo datos en formato JSON desde una base de datos real (backend con [CakePHP](https://github.com/alex-arriaga/universidad-del-pastel))
 	- Optimización al concatenar múltiples objetos (push(), join())
+
+- Clase 6. Ajax, un paso  más...
+	- Insertando datos mediante Ajax, una forma fácil
+	- Método load()
+	- Creando selects dinámicamente (consulta a base de datos + generación)
+	- Llamados Ajax dependientes
+	- Usando Bootstrap JS para mostrar mensajes emergentes
+
