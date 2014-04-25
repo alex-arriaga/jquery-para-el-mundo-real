@@ -83,7 +83,7 @@
 				alert("Seleccione un profesor");
 			}
 
-		});
+		});// ends on-click #course-add
 
 	});// ends document.ready
 })(jQuery);

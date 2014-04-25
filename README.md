@@ -10,6 +10,7 @@ Si tienes alguna duda por favor visita mi canal de Youtube donde encontrarás es
 - Clase 3: https://www.youtube.com/watch?v=TERkD0zq_3U
 - Clase 4: https://www.youtube.com/watch?v=e8g6gbJp1Qo
 - Clase 5: https://www.youtube.com/watch?v=B613u7Mnipo
+- Clase 6: https://www.youtube.com/watch?v=lV6EFXiljBw
 
 Si tienes alguna pregunta puedes dejarla en mi cuenta de twitter: https://twitter.com/alex_arriaga_m
 
